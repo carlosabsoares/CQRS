@@ -1,6 +1,7 @@
 ﻿using Flunt.Notifications;
 using Todo.Domain.Commands;
 using Todo.Domain.Commands.Contracts;
+using Todo.Domain.Entities;
 using Todo.Domain.Handlers.Contracts;
 using Todo.Domain.Repositories;
 
@@ -27,8 +28,18 @@ namespace Todo.Domain.Handlers
                         false,
                         "Ops, parece que sua tarefa está errada!",
                         command.Notifications);
-            //Salvar um todo no banco
-            //Notificar o usuário
+            //Gerar TodoItem
+            var todo = new TodoItem(command.Title, command.User, command.Date);
+
+            //Salva no banco
+            _repository.Create(todo);
+
+            //retorna o resultado
+            return new GenericCommandResult(
+                        true,
+                        "Operação Salva!",
+                        todo);
+
         }
 
     }
