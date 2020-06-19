@@ -2,12 +2,10 @@
 
 namespace Todo.Domain.Commands
 {
-    public class GenericCommandResult: ICommandResult
+    public class GenericCommandResult : ICommandResult
     {
-
         public GenericCommandResult()
         {
-
         }
 
         public GenericCommandResult(bool success, string message, object data)
@@ -20,8 +18,5 @@ namespace Todo.Domain.Commands
         public bool Success { get; set; }
         public string Message { get; set; }
         public object Data { get; set; }
-
-
-
     }
 }

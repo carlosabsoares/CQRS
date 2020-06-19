@@ -7,7 +7,7 @@ using Todo.Domain.Repositories;
 
 namespace Todo.Domain.Handlers
 {
-    public class TodoHandler : 
+    public class TodoHandler :
         Notifiable,
         IHandler<CreateTodoCommand>
     {
@@ -18,16 +18,15 @@ namespace Todo.Domain.Handlers
             _repository = repository;
         }
 
-
         public ICommandResult Handle(CreateTodoCommand command)
         {
             //Criar um todo
             command.Validate();
             if (command.Invalid)
-            return new GenericCommandResult(
-                        false,
-                        "Ops, parece que sua tarefa está errada!",
-                        command.Notifications);
+                return new GenericCommandResult(
+                            false,
+                            "Ops, parece que sua tarefa está errada!",
+                            command.Notifications);
             //Gerar TodoItem
             var todo = new TodoItem(command.Title, command.User, command.Date);
 
@@ -39,8 +38,6 @@ namespace Todo.Domain.Handlers
                         true,
                         "Operação Salva!",
                         todo);
-
         }
-
     }
 }

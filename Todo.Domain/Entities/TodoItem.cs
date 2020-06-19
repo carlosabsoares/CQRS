@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Todo.Domain.Entities
 {
-    public class TodoItem: Entity
+    public class TodoItem : Entity
     {
-
         public TodoItem(string title, string user, DateTime date)
         {
             Title = title;
@@ -14,7 +11,6 @@ namespace Todo.Domain.Entities
             Date = date;
             User = user;
         }
-
 
         public string Title { get; private set; }
         public bool Done { get; private set; }

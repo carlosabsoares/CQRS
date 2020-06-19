@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Todo.Domain.Entities
 {
-   public abstract class Entity: IEquatable<Entity>
+    public abstract class Entity : IEquatable<Entity>
     {
-
         public Entity()
         {
-            Id = Guid.NewGuid() ;
+            Id = Guid.NewGuid();
         }
 
         public Guid Id { get; private set; }
