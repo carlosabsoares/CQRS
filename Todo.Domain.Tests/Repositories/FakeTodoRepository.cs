@@ -13,9 +13,14 @@ namespace Todo.Domain.Tests.Repositories
 
         }
 
+        public TodoItem GetById(Guid id, string user)
+        {
+            return new TodoItem("Título Aqui","Carlos Soares",DateTime.Now);
+        }
+
         public void Update(TodoItem todo)
         {
-            throw new NotImplementedException();
+
         }
     }
 }
