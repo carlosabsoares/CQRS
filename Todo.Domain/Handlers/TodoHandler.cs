@@ -67,7 +67,6 @@ namespace Todo.Domain.Handlers
                         true,
                         "Operação Salva!",
                         todo);
-
         }
 
         public ICommandResult Handle(MarkTodoAsDoneCommand command)

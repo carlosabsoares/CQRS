@@ -1,7 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Todo.Domain.Entities;
 
 namespace Todo.Domain.Tests.EntityTests
@@ -9,7 +7,6 @@ namespace Todo.Domain.Tests.EntityTests
     [TestClass]
     public class TodoItemTest
     {
-
         private readonly TodoItem _valideTodo = new TodoItem("Titulo aqui", "carlossoares", DateTime.Now);
 
         [TestMethod]
