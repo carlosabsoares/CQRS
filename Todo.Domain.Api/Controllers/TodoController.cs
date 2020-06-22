@@ -91,9 +91,11 @@ namespace Todo.Domain.Api.Controllers
             )
         {
             command.User = "Carlos Soares";
+            //command.User = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
             return (GenericCommandResult)handler.Handle(command);
         }
 
+        [Route("mark-as-done")]
         [HttpPut]
         public GenericCommandResult MarkAsDone(
             [FromBody] MarkTodoAsDoneCommand command,
@@ -104,6 +106,7 @@ namespace Todo.Domain.Api.Controllers
             return (GenericCommandResult)handler.Handle(command);
         }
 
+        [Route("mark-as-undone")]
         [HttpPut]
         public GenericCommandResult MarkAsUnDone(
             [FromBody] MarkTodoAsUndoneCommand command,
